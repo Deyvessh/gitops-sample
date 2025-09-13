@@ -2,5 +2,5 @@ app:
   env: production
   version: "3.3"
 secret:
-  dbUser: "mysql_67-prod-user_9989"
-  dbPassword: "Supersecureprodpassword!#do_not_copy$%^"
+  dbUser: "mysql_98786-prod-user_9989"
+  dbPassword: "SupersecureprodpassworduehahTEFGJAOE9485734#%T^"
