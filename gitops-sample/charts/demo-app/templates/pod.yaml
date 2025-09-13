@@ -6,9 +6,25 @@ spec:
   containers:
   - name: demo-container
     image: busybox
-    command: ["sh", "-c", "echo APP_ENV=$APP_ENV && echo DB_USER=$DB_USER && echo DB_PASSWORD=$DB_PASSWORD && sleep 3600"]
-    envFrom:
-    - configMapRef:
-        name: {{ .Release.Name }}-config
-    - secretRef:
-        name: {{ .Release.Name }}-secret
+    command: 
+      - "sh"
+      - "-c"
+      - |
+      - echo "APP_ENV=$(cat /etc/config/APP_ENV)" && \
+      - echo "APP_VERSION=$(cat /etc/config/APP_VERSION)" && \
+      - echo "DB_USER=$(cat /etc/secret/DB_USER)" && \
+      - echo "DB_PASSWORD=$(cat /etc/secret/DB_PASSWORD)" && \
+      - sleep 3600
+    volumeMounts:
+    - name: config-volume
+        mountPath: /etc/config
+    - name: config-secret
+        mountPath: /etc/secret
+        readOnly: true
+  volumes:
+  - name: config-volume
+    configMap:
+      name: {{ .Release.Name }}-config
+  - name: secret-volume
+    secret:
+      name: {{ .Release.Name }}-secret
