@@ -1,0 +1,6 @@
+app:
+  env: dev
+  version: "1.0"
+secret:
+  dbUser: "mysql-dev-user"
+  dbPassword: "devpass123"
