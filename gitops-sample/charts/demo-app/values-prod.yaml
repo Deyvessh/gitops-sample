@@ -1,6 +1,6 @@
 app:
-  env: production
-  version: "3.3"
+  env: production_sequence
+  version: "10.7"
 secret:
   dbUser: "mysql_98786-prod-user_9989"
   dbPassword: "SupersecureprodpassworduehahTEFGJAOE9485734#%T^"
