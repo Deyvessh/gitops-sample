@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: "https://github.com/Deyvessh/gitops-sample.git"
     targetRevision: main
-    path: charts/demo-app
+    path: gitops-sample/gitops-sample/charts/demo-app
     helm: 
       valueFiles: 
       - values-prod.yaml
