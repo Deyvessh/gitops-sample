@@ -6,7 +6,7 @@ spec:
   containers:
   - name: demo-container
     image: busybox
-    command: 
+    command:
       - "sh"
       - "-c"
       - |
@@ -17,10 +17,10 @@ spec:
         sleep 3600
     volumeMounts:
     - name: config-volume
-        mountPath: /etc/config
+      mountPath: /etc/config
     - name: secret-volume
-        mountPath: /etc/secret
-        readOnly: true
+      mountPath: /etc/secret
+      readOnly: true
   volumes:
   - name: config-volume
     configMap:
@@ -28,3 +28,4 @@ spec:
   - name: secret-volume
     secret:
       secretName: {{ .Release.Name }}-secret
+
