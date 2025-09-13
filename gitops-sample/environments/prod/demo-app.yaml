@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: "https://github.com/Deyvessh/gitops-sample.git"
-    targetRivision: main
+    targetRevision: main
     path: charts/demo-app
     helm: 
       valueFiles: 
