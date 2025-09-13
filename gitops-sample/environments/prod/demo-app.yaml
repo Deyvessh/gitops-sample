@@ -6,7 +6,7 @@ metadata:
 spec: 
   project: default
   source:
-    repoURL: ""
+    repoURL: "https://github.com/Deyvessh/gitops-sample.git"
     targetRivision: main
     path: charts/demo-app
     helm: 
