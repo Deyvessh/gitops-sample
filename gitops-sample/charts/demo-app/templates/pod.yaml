@@ -11,10 +11,10 @@ spec:
       - "-c"
       - |
       - echo "APP_ENV=$(cat /etc/config/APP_ENV)" && \
-      - echo "APP_VERSION=$(cat /etc/config/APP_VERSION)" && \
-      - echo "DB_USER=$(cat /etc/secret/DB_USER)" && \
-      - echo "DB_PASSWORD=$(cat /etc/secret/DB_PASSWORD)" && \
-      - sleep 3600
+        echo "APP_VERSION=$(cat /etc/config/APP_VERSION)" && \
+        echo "DB_USER=$(cat /etc/secret/DB_USER)" && \
+        echo "DB_PASSWORD=$(cat /etc/secret/DB_PASSWORD)" && \
+        sleep 3600
     volumeMounts:
     - name: config-volume
         mountPath: /etc/config
@@ -25,6 +25,6 @@ spec:
   - name: config-volume
     configMap:
       name: {{ .Release.Name }}-config
-  - name: secret-volume
+  - name: secret-secret
     secret:
       name: {{ .Release.Name }}-secret
